@@ -1,8 +1,10 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=230&text=DOBERTO%20MRLIT%20DEV&fontAlign=50&fontAlignY=38&fontSize=48&desc=Full-Stack%20Developer%20%E2%80%A2%20Digital%20Products%20%E2%80%A2%20Automation&descAlign=50&descAlignY=61&animation=fadeIn&section=header" />
+<p align="center">
+  <img src="./assets/profile-banner.jpg" width="100%" alt="DOBERTO MRLIT DEV banner" />
+</p>
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=23&pause=1000&center=true&vCenter=true&width=760&lines=Building+products+people+can+actually+use;Web+Platforms+%E2%80%A2+Android+%E2%80%A2+Automation;Clean+UI+%E2%80%A2+Fast+Experiences+%E2%80%A2+Real+Products)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=23&pause=1000&center=true&vCenter=true&width=780&lines=Building+modern+digital+products;Web+Platforms+%E2%80%A2+Android+%E2%80%A2+Automation;Clean+UI+%E2%80%A2+Fast+Experiences+%E2%80%A2+Real+Products)](https://git.io/typing-svg)
 
 <br/>
 
@@ -16,9 +18,9 @@
 
 ## About Me
 
-I'm **Doberto Mrlit**, a developer focused on turning ideas into polished digital products.
+I'm **Doberto Mrlit**, a developer focused on turning ideas into polished, useful digital products.
 
-I build across **web applications, Android experiences, APIs, databases, automation systems, and product UI/UX** — with a strong focus on mobile usability, performance, and real-world functionality.
+I build across **web applications, Android experiences, APIs, databases, automation systems, and product UI/UX**, with strong attention to mobile usability, performance, visual quality, and real-world functionality.
 
 ### What I Build
 
@@ -42,11 +44,11 @@ I build across **web applications, Android experiences, APIs, databases, automat
 
 <p align="center">
   <a href="https://dobertoflix.com">
-    <img src="assets/doberto-flix.jpg" width="100%" alt="DOBERTO FLIX interface preview" />
+    <img src="./assets/doberto-flix-hd.jpg" width="100%" alt="DOBERTO FLIX HD showcase" />
   </a>
 </p>
 
-A cinematic streaming platform and Android experience built around movies, series, fast content discovery, responsive UI, and modern playback workflows.
+A cinematic streaming platform and Android experience focused on movies, series, fast content discovery, responsive UI, and modern playback workflows.
 
 [![Live Product](https://img.shields.io/badge/LIVE_PRODUCT-dobertoflix.com-E50914?style=for-the-badge)](https://dobertoflix.com)
 ![Platform](https://img.shields.io/badge/PLATFORM-WEB_%2B_ANDROID-181717?style=for-the-badge)
@@ -57,53 +59,44 @@ A cinematic streaming platform and Android experience built around movies, serie
 
 <p align="center">
   <a href="https://ayiti-market.com">
-    <img src="assets/ayiti-market.jpg" width="100%" alt="AYITI MARKET interface preview" />
+    <img src="./assets/ayiti-market-hd.jpg" width="100%" alt="AYITI MARKET HD showcase" />
   </a>
 </p>
 
-A mobile-first marketplace platform designed to make buying, selling, publishing listings, messaging, and product discovery simpler across Haiti.
+A mobile-first marketplace designed to make buying, selling, publishing listings, messaging, and product discovery simpler across Haiti.
 
 [![Live Product](https://img.shields.io/badge/LIVE_PRODUCT-ayiti--market.com-D21034?style=for-the-badge)](https://ayiti-market.com)
 ![Type](https://img.shields.io/badge/TYPE-MARKETPLACE-0066CC?style=for-the-badge)
 
 ---
 
-## More Products
+## DOBERTO MD V3
 
-<table>
-<tr>
-<td width="50%" valign="top" align="center">
+<p align="center">
+  <a href="https://doberto-md-v3.vercel.app">
+    <img src="./assets/doberto-md-v3-hd.jpg" width="100%" alt="DOBERTO MD V3 HD showcase" />
+  </a>
+</p>
 
-### DOBERTO MD V3
+A multi-device automation ecosystem with pairing, session management, commands, integrations, and bot tooling.
 
-<a href="https://doberto-md-v3.vercel.app">
-  <img src="assets/doberto-md-v3.jpg" width="86%" alt="DOBERTO MD V3 interface preview" />
-</a>
+[![Open Project](https://img.shields.io/badge/OPEN-PROJECT-B00020?style=for-the-badge)](https://doberto-md-v3.vercel.app)
+![Focus](https://img.shields.io/badge/FOCUS-AUTOMATION-181717?style=for-the-badge)
 
-<br/><br/>
+---
 
-Multi-device automation ecosystem with session management, commands, integrations, and bot tooling.
+## DOBERTO VCF
 
-[![Open](https://img.shields.io/badge/OPEN-PROJECT-B00020?style=for-the-badge)](https://doberto-md-v3.vercel.app)
+<p align="center">
+  <a href="https://doberto-vcf-509.vercel.app">
+    <img src="./assets/doberto-vcf-hd.jpg" width="100%" alt="DOBERTO VCF HD showcase" />
+  </a>
+</p>
 
-</td>
-<td width="50%" valign="top" align="center">
+A contact and WhatsApp utility platform centered on community growth and practical contact workflows.
 
-### DOBERTO VCF
-
-<a href="https://doberto-vcf-509.vercel.app">
-  <img src="assets/doberto-vcf.jpg" width="86%" alt="DOBERTO VCF interface preview" />
-</a>
-
-<br/><br/>
-
-A contact and WhatsApp utility platform focused on community growth and practical contact workflows.
-
-[![Open](https://img.shields.io/badge/OPEN-PROJECT-1261A0?style=for-the-badge)](https://doberto-vcf-509.vercel.app)
-
-</td>
-</tr>
-</table>
+[![Open Project](https://img.shields.io/badge/OPEN-PROJECT-1261A0?style=for-the-badge)](https://doberto-vcf-509.vercel.app)
+![Type](https://img.shields.io/badge/TYPE-DIGITAL_UTILITY-181717?style=for-the-badge)
 
 ---
 
@@ -160,5 +153,3 @@ A modern gaming top-up platform focused on fast transactions, mobile usability, 
 **Building ideas into digital products.**
 
 </div>
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer" />
