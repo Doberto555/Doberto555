@@ -1,11 +1,11 @@
 {
-  "id": "/Doberto555/",
+  "id": "/",
   "name": "DOBERTO MRLIT DEV",
   "short_name": "DOBERTO DEV",
   "description": "Official portfolio of DOBERTO MRLIT DEV — Full-Stack Developer building web, Android and automation products.",
   "lang": "en",
-  "start_url": "/Doberto555/",
-  "scope": "/Doberto555/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#0a0a0a",
@@ -22,12 +22,12 @@
     {
       "name": "Projects",
       "short_name": "Projects",
-      "url": "/Doberto555/#work"
+      "url": "/#work"
     },
     {
       "name": "Contact",
       "short_name": "Contact",
-      "url": "/Doberto555/#contact"
+      "url": "/#contact"
     }
   ]
 }
