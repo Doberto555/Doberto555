@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07090d"/><stop offset="1" stop-color="#101722"/></linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ffffff"/><stop offset=".55" stop-color="#68b1ff"/><stop offset="1" stop-color="#ff4b67"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-opacity=".35"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="70" r="300" fill="#2d8cff" opacity=".10"/>
+  <circle cx="110" cy="570" r="260" fill="#ff304f" opacity=".08"/>
+  <g transform="translate(72 78)">
+    <rect x="0" y="0" width="118" height="38" rx="19" fill="#102217" stroke="#45e28c" stroke-opacity=".35"/>
+    <circle cx="22" cy="19" r="5" fill="#45e28c"/>
+    <text x="38" y="24" fill="#9df2bd" font-family="Arial" font-size="13" font-weight="700">PORTFOLIO</text>
+    <text x="0" y="150" fill="url(#title)" font-family="Arial" font-size="82" font-weight="900">DOBERTO</text>
+    <text x="0" y="238" fill="url(#title)" font-family="Arial" font-size="82" font-weight="900">MRLIT DEV</text>
+    <text x="0" y="296" fill="#b6c1cf" font-family="Arial" font-size="26">Full-Stack Developer · Web · Android · Automation</text>
+    <g transform="translate(0 350)" font-family="Arial" font-size="17" font-weight="700">
+      <rect width="150" height="48" rx="14" fill="#111923" stroke="#2d8cff" stroke-opacity=".35"/><text x="31" y="30" fill="#dceaff">WEB APPS</text>
+      <rect x="166" width="130" height="48" rx="14" fill="#111923" stroke="#2d8cff" stroke-opacity=".35"/><text x="190" y="30" fill="#dceaff">ANDROID</text>
+      <rect x="312" width="165" height="48" rx="14" fill="#111923" stroke="#ff304f" stroke-opacity=".35"/><text x="340" y="30" fill="#ffe0e5">AUTOMATION</text>
+    </g>
+    <text x="0" y="462" fill="#7e8a99" font-family="Arial" font-size="18">github.com/Doberto555</text>
+  </g>
+  <g transform="translate(865 132)" filter="url(#shadow)">
+    <rect width="250" height="250" rx="58" fill="#0e141d" stroke="#263244" stroke-width="3"/>
+    <circle cx="125" cy="125" r="84" fill="#111c2a" stroke="#2d8cff" stroke-opacity=".35" stroke-width="3"/>
+    <text x="125" y="146" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="72" font-weight="900">D</text>
+  </g>
+  <text x="865" y="448" fill="#ffffff" font-family="Arial" font-size="25" font-weight="700">DOBERTO MRLIT DEV</text>
+  <text x="865" y="482" fill="#8fa0b4" font-family="Arial" font-size="17">Building digital products.</text>
+</svg>
