@@ -54,6 +54,6 @@ const items=document.querySelectorAll('.reveal');if('IntersectionObserver'in win
 const navLinks=[...document.querySelectorAll('.links a[href^="#"]')],sections=[...document.querySelectorAll('main section[id]')];
 if('IntersectionObserver'in window){const navObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;navLinks.forEach(a=>{const active=a.getAttribute('href')==='#'+entry.target.id;a.classList.toggle('is-active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})})},{rootMargin:'-28% 0px -62% 0px',threshold:0});sections.forEach(s=>navObserver.observe(s))}
 </script>
-<script src="assets/portfolio-ui.js?v=20260905-pro1"></script>
+<script src="assets/portfolio-ui.js?v=20260905-intro1"></script>
 </body>
 </html>
