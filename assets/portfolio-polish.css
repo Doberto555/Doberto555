@@ -2,6 +2,23 @@
 .product-mark{transition:border-color .18s ease,transform .18s ease}.project:hover .product-mark{border-color:color-mix(in srgb,var(--accent) 38%,var(--line));transform:translateY(-1px)}
 .source-private::before{content:"";display:inline-block;width:4px;height:4px;margin-right:5px;border-radius:50%;background:#68707c}
 .project-actions a,.social{transition:background .18s ease,border-color .18s ease,transform .18s ease}.project-actions a:hover,.social:hover{transform:translateY(-1px);background:#171a21}.project-actions .primary:hover{background:#e6e7e9;border-color:#e6e7e9}.contact::before{content:"";position:absolute;top:0;left:42px;right:42px;height:1px;background:linear-gradient(90deg,transparent,#3b404a,transparent)}
+
+/* Visual project showcase using real project screenshots already stored in the repo */
+.project{display:flex;flex-direction:column;min-height:510px;padding:198px 22px 22px}
+.project::before{z-index:0}
+.project::after{content:"";position:absolute;left:0;right:0;top:0;height:168px;z-index:0;background-position:center;background-size:cover;background-repeat:no-repeat;border-bottom:1px solid color-mix(in srgb,var(--accent) 28%,var(--line));filter:saturate(.95) contrast(1.02)}
+.project:nth-child(1)::after{background-image:linear-gradient(180deg,rgba(7,9,13,.04),rgba(7,9,13,.68)),url('doberto-flix-hd.jpg')}
+.project:nth-child(2)::after{background-image:linear-gradient(180deg,rgba(7,9,13,.04),rgba(7,9,13,.68)),url('ayiti-market-hd.jpg')}
+.project:nth-child(3)::after{background-image:linear-gradient(180deg,rgba(7,9,13,.04),rgba(7,9,13,.68)),url('doberto-md-v3-hd.jpg')}
+.project:nth-child(4)::after{background-image:linear-gradient(180deg,rgba(7,9,13,.04),rgba(7,9,13,.68)),url('doberto-vcf-hd.jpg')}
+.product-mark{position:absolute;left:22px;top:126px;z-index:3;width:74px;height:74px;display:grid;place-items:center;border-radius:18px;background:#0a0d12;font-size:23px;line-height:1;font-weight:900;box-shadow:0 16px 38px rgba(0,0,0,.38)}
+.product-mark img{position:relative;z-index:1}
+.project-main{position:relative;z-index:2;display:flex;flex:1;flex-direction:column;width:100%}
+.project-title-row{margin-top:20px}
+.project-actions{position:relative;z-index:2;width:100%;margin-top:22px}
+.project-actions a{min-height:42px;flex:1}
+
 @media(max-width:980px){.links a::after{display:none}}
-@media(max-width:480px){.contact::before{left:22px;right:22px}}
+@media(max-width:760px){.project{min-height:0;padding:176px 18px 18px}.project::after{height:146px}.product-mark{left:18px;top:108px;width:66px;height:66px;border-radius:16px;font-size:20px}.project-title-row{margin-top:14px}.project p{margin-top:11px}.project-actions{margin-top:18px}}
+@media(max-width:480px){.contact::before{left:22px;right:22px}.project{padding:166px 17px 17px;border-radius:20px}.project::after{height:138px}.product-mark{left:17px;top:102px;width:62px;height:62px;border-radius:15px}.project-title-row{gap:6px;margin-top:10px}.project h3{font-size:21px}.project .domain{font-size:9px}.project .source-private{display:none}.project p{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:3}.project-actions a{min-height:44px}}
 @media(prefers-reduced-motion:reduce){.links a::after,.product-mark,.project-actions a,.social{transition:none!important}}
