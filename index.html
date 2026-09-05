@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/portfolio.css?v=20260904-pro3">
 <link rel="stylesheet" href="assets/portfolio-polish.css?v=20260905-pro1">
-<link rel="stylesheet" href="assets/preferences.css?v=20260905-pro1">
+<link rel="stylesheet" href="assets/preferences.css?v=20260905-stable3">
 <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/235633378?v=4">
 <meta property="og:type" content="website"><meta property="og:site_name" content="DOBERTO MRLIT DEV">
 <meta property="og:title" content="DOBERTO MRLIT DEV | Full-Stack Developer"><meta property="og:description" content="Developer behind DOBERTO FLIX, AYITI MARKET, DOBERTO MD V3, DOBERTO VCF and NOVATOP."><meta property="og:url" content="https://dobertomrlit.zone.id/"><meta property="og:image" content="https://raw.githubusercontent.com/Doberto555/Doberto555/main/assets/og-preview.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="DOBERTO MRLIT DEV portfolio preview">
@@ -54,6 +54,7 @@ const items=document.querySelectorAll('.reveal');if('IntersectionObserver'in win
 const navLinks=[...document.querySelectorAll('.links a[href^="#"]')],sections=[...document.querySelectorAll('main section[id]')];
 if('IntersectionObserver'in window){const navObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;navLinks.forEach(a=>{const active=a.getAttribute('href')==='#'+entry.target.id;a.classList.toggle('is-active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})})},{rootMargin:'-28% 0px -62% 0px',threshold:0});sections.forEach(s=>navObserver.observe(s))}
 </script>
-<script src="assets/portfolio-ui.js?v=20260905-intro1"></script>
+<script>try{sessionStorage.setItem('doberto-intro-seen','1')}catch(_){}</script>
+<script src="assets/portfolio-ui.js?v=20260905-stable3"></script>
 </body>
 </html>
