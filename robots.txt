@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://doberto555.github.io/Doberto555/sitemap.xml
