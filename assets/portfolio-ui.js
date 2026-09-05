@@ -1,5 +1,16 @@
 (()=>{
 'use strict';
+const bootIntro=()=>{
+  let seen=false;try{seen=sessionStorage.getItem('doberto-intro-seen')==='1'}catch(_){}
+  const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(seen||reduced)return;
+  const css=document.createElement('link');css.rel='stylesheet';css.href='assets/intro.css?v=20260905-pro1';document.head.append(css);
+  const intro=document.createElement('div');intro.className='site-intro';intro.id='siteIntro';intro.setAttribute('aria-hidden','true');intro.style.cssText='position:fixed;inset:0;z-index:9999;background:#070708;color:#fff;display:grid;place-items:center';
+  intro.innerHTML='<span class="intro-corner tl"></span><span class="intro-corner br"></span><div class="intro-core"><div class="intro-kicker">FULL-STACK DEVELOPER</div><div class="intro-brand"><span class="intro-doberto">DOBERTO</span><br><span class="intro-mrlit">MRLIT DEV</span></div><div class="intro-divider"></div><div class="intro-build">BUILD <b>/</b> SHIP <b>/</b> EVOLVE</div><div class="intro-progress"><span></span></div></div>';
+  document.body.prepend(intro);try{sessionStorage.setItem('doberto-intro-seen','1')}catch(_){}
+  const finish=()=>{intro.classList.add('is-finished');setTimeout(()=>intro.remove(),420)};setTimeout(finish,2860);
+};
+bootIntro();
 const root=document.documentElement;
 const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
 const safeGet=(k)=>{try{return localStorage.getItem(k)}catch(_){return null}},safeSet=(k,v)=>{try{localStorage.setItem(k,v)}catch(_){}};
