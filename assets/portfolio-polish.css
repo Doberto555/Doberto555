@@ -3,26 +3,38 @@
 .source-private{display:none!important}
 .project-actions a,.social{transition:background .18s ease,border-color .18s ease,transform .18s ease}.project-actions a:hover,.social:hover{transform:translateY(-1px);background:#171a21}.project-actions .primary:hover{filter:brightness(1.04)}.contact::before{content:"";position:absolute;top:0;left:42px;right:42px;height:1px;background:linear-gradient(90deg,transparent,#3b404a,transparent)}
 
-/* Premium product cards: clean branding, no low-resolution screenshot banners */
-.project{position:relative;display:flex;flex-direction:column;min-height:360px;padding:26px;border-radius:24px;overflow:hidden;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 7%,#10141b),#0c1016 54%,#090c11);box-shadow:0 18px 48px rgba(0,0,0,.16)}
-.project::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(360px 220px at 100% 0%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 72%)}
-.project::after{content:"";position:absolute;left:26px;right:26px;top:0;height:2px;z-index:1;border-radius:999px;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 35%,transparent),transparent 82%);opacity:.9}
-.product-mark{position:absolute;left:26px;top:28px;z-index:3;width:82px;height:82px;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--accent) 38%,var(--line));border-radius:20px;background:color-mix(in srgb,var(--accent) 6%,#0a0d12);overflow:hidden;box-shadow:0 14px 32px rgba(0,0,0,.26)}
-.product-mark img{width:100%;height:100%;object-fit:cover}
+/* Premium product cards */
+.project{position:relative;display:flex;flex-direction:column;min-height:340px;padding:28px;border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));border-radius:24px;overflow:hidden;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 5%,#10141b),#0c1016 58%,#090c11);box-shadow:0 16px 44px rgba(0,0,0,.13)}
+.project::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(330px 190px at 100% 0%,color-mix(in srgb,var(--accent) 11%,transparent),transparent 74%)}
+.project::after{content:"";position:absolute;left:28px;right:28px;top:0;height:2px;z-index:1;border-radius:999px;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 28%,transparent),transparent 78%);opacity:.82}
+.product-mark{position:absolute;left:28px;top:30px;z-index:3;width:78px;height:78px;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--accent) 28%,var(--line));border-radius:18px;background:#0a0d12;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,.22)}
+.product-mark img{width:100%;height:100%;object-fit:contain;padding:9px;background:#0a0d12}
 .project-main{position:relative;z-index:2;display:flex;flex:1;flex-direction:column;width:100%}
-.project-title-row{min-height:86px;margin:0;padding:8px 0 8px 106px;display:flex;align-content:center;align-items:center;gap:8px;flex-wrap:wrap}
-.project h3{font-size:28px;line-height:1;letter-spacing:-.045em}
-.project .live{padding:5px 8px;font-size:8px}
-.project .domain{width:100%;margin-top:1px;color:#7f8997;font-size:10px;letter-spacing:.01em}
-.project p{max-width:530px;margin:22px 0 20px;color:#aab3bf;font-size:13px;line-height:1.72}
+.project-title-row{min-height:82px;margin:0;padding:8px 0 8px 102px;display:flex;align-content:center;align-items:center;gap:8px;flex-wrap:wrap}
+.project h3{font-size:30px;line-height:.98;letter-spacing:-.05em;font-weight:900}
+.project .live{padding:4px 7px;font-size:7px;letter-spacing:.08em}
+.project .domain{width:100%;margin-top:3px;color:#687382;font-size:9px;letter-spacing:.015em}
+.project p{max-width:500px;margin:20px 0 19px;color:#939eaa;font-size:12px;line-height:1.7}
 .project .chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}
-.project .chip{padding:6px 9px;background:rgba(255,255,255,.018)}
-.project-actions{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:9px;width:100%;margin-top:24px}
-.project-actions a{min-height:44px;width:100%;border-radius:12px;font-size:10px}
+.project .chip{padding:5px 8px;border-color:#1b222c;background:transparent;color:#7f8996;font-size:8px}
+.project .chip:nth-child(n+4){display:none}
+.project-actions{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:9px;width:100%;margin-top:24px}
+.project-actions a{min-height:44px;width:100%;border-radius:11px;font-size:10px}
 .project-actions .primary{box-shadow:none}
+.project-actions a:not(.primary){background:transparent;border-color:#252d38;color:#aeb6c1}
+
+/* More editorial spacing between sections */
+section{padding-top:104px;padding-bottom:104px}
+.section-head{margin-bottom:42px;gap:52px}
+.section-head .title{margin-top:10px}
+.section-head .desc{max-width:390px}
+.project-list{gap:22px}
+#stack,#about,#contact{scroll-margin-top:82px}
 
 /* Cinematic mobile hero */
 @media(max-width:760px){
+  section{padding-top:74px;padding-bottom:74px}
+  .section-head{margin-bottom:28px;gap:12px}
   .hero{padding:36px 0 34px}
   .hero::before{background:radial-gradient(340px 190px at 92% 4%,rgba(255,48,79,.14),transparent 72%),linear-gradient(180deg,rgba(255,255,255,.012),transparent 45%)}
   .hero-grid{gap:22px}
@@ -47,17 +59,19 @@
   .profile-meta div{padding:9px 7px;border-radius:10px;text-align:center}
   .profile-meta small{font-size:6px;letter-spacing:.07em}
   .profile-meta b{margin-top:2px;font-size:9px}
-
-  .project{min-height:0;padding:20px;border-radius:21px}
-  .project::after{left:20px;right:20px}
-  .product-mark{left:20px;top:22px;width:68px;height:68px;border-radius:17px}
-  .project-title-row{min-height:72px;padding:5px 0 5px 88px;gap:6px}
+  .project-list{gap:14px}
+  .project{min-height:0;padding:21px;border-radius:21px}
+  .project::after{left:21px;right:21px}
+  .product-mark{left:21px;top:23px;width:66px;height:66px;border-radius:16px}
+  .product-mark img{padding:8px}
+  .project-title-row{min-height:70px;padding:5px 0 5px 86px;gap:6px}
   .project h3{font-size:23px}
-  .project p{margin:18px 0 17px;font-size:12px;line-height:1.65}
-  .project-actions{margin-top:20px}
+  .project p{margin:17px 0 16px;font-size:11.5px;line-height:1.65}
+  .project-actions{margin-top:19px}
 }
 
 @media(max-width:480px){
+  section{padding-top:64px;padding-bottom:64px}
   .contact::before{left:22px;right:22px}
   .hero{padding:30px 0 28px}
   .hero h1{font-size:clamp(42px,13vw,52px)}
@@ -70,15 +84,16 @@
   .profile-meta{grid-template-columns:repeat(2,minmax(0,1fr))}
   .profile-meta div{text-align:left;padding:9px 10px}
   .profile-meta small{font-size:7px}.profile-meta b{font-size:10px}
-  .project{padding:18px;border-radius:20px}
+  .project{padding:18px;border-radius:19px}
   .project::after{left:18px;right:18px}
-  .product-mark{left:18px;top:20px;width:62px;height:62px;border-radius:16px}
-  .project-title-row{min-height:66px;padding:4px 0 4px 80px;gap:6px}
+  .product-mark{left:18px;top:20px;width:60px;height:60px;border-radius:15px}
+  .product-mark img{padding:7px}
+  .project-title-row{min-height:64px;padding:4px 0 4px 78px;gap:6px}
   .project h3{font-size:21px}
-  .project .domain{font-size:9px}
-  .project p{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:3;margin-top:16px}
+  .project .domain{font-size:8px}
+  .project p{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:3;margin-top:15px}
   .project-actions{gap:8px;margin-top:18px}
-  .project-actions a{min-height:44px}
+  .project-actions a{min-height:43px}
 }
-@media(max-width:360px){.actions{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.facts span:last-child{grid-column:1/-1}.profile-top{align-items:flex-start}.profile-name{font-size:16px}.project-title-row{padding-left:74px}.product-mark{width:56px;height:56px}.project h3{font-size:19px}}
+@media(max-width:360px){.actions{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.facts span:last-child{grid-column:1/-1}.profile-top{align-items:flex-start}.profile-name{font-size:16px}.project-title-row{padding-left:72px}.product-mark{width:54px;height:54px}.project h3{font-size:19px}}
 @media(prefers-reduced-motion:reduce){.links a::after,.product-mark,.project-actions a,.social{transition:none!important}}
