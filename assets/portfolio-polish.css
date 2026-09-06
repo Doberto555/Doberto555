@@ -148,3 +148,81 @@ html[data-theme="light"] #stack .stack-tools>span{border-color:#dfe4ea;backgroun
 }
 @media(max-width:360px){.actions{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.facts span:last-child{grid-column:1/-1}.profile-top{align-items:flex-start}.profile-name{font-size:16px}.project-title-row{padding-left:72px}.product-mark{width:54px;height:54px}.project h3{font-size:19px}}
 @media(prefers-reduced-motion:reduce){.links a::after,.product-mark,.project-actions a,.social,#stack .tech,#stack .stack-tools>span{transition:none!important}}
+
+/* Premium About */
+#about{position:relative;background:linear-gradient(180deg,#07090d 0%,#090c11 100%);border-top:1px solid #151b24}
+#about .about-grid{display:grid;grid-template-columns:1.14fr .86fr;gap:14px}
+#about .about-card{position:relative;min-height:255px;padding:34px;border:1px solid #202733;border-radius:22px;background:linear-gradient(145deg,#10151d,#0b0f15);overflow:hidden;box-shadow:none}
+#about .about-card:first-child{border-color:rgba(255,48,79,.24);background:linear-gradient(145deg,rgba(255,48,79,.075),#10141b 45%,#0b0f15)}
+#about .about-card:first-child::before{content:"";position:absolute;left:0;top:34px;bottom:34px;width:2px;border-radius:999px;background:var(--accent)}
+#about .about-card:first-child::after{content:"";position:absolute;right:-90px;top:-110px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,48,79,.12),transparent 68%);pointer-events:none}
+#about .about-card h3{position:relative;z-index:1;max-width:540px;font-size:clamp(25px,2.5vw,36px);line-height:1.02;letter-spacing:-.045em}
+#about .about-card:nth-child(2) h3{font-size:26px}
+#about .about-card p{position:relative;z-index:1;max-width:610px;margin:15px 0 0;color:#929ca9;font-size:12px;line-height:1.75}
+#about .pills{position:relative;z-index:1;display:flex;gap:7px;flex-wrap:wrap;margin-top:25px}
+#about .pill{padding:6px 9px;border:1px solid #252d38;border-radius:999px;background:transparent;color:#87919e;font-size:8px;font-weight:800;letter-spacing:.025em}
+
+/* Premium final CTA */
+#contact{padding-top:92px;padding-bottom:78px;background:#07090d}
+#contact .contact{position:relative;padding:52px 54px;border:1px solid rgba(255,48,79,.22);border-radius:28px;background:linear-gradient(135deg,rgba(255,48,79,.09),#10151d 38%,#0b0f15 100%);overflow:hidden}
+#contact .contact::before{left:54px;right:54px;background:linear-gradient(90deg,var(--accent),rgba(255,48,79,.18),transparent 72%)}
+#contact .contact::after{right:-80px;bottom:-120px;width:340px;height:340px;background:radial-gradient(circle,rgba(255,48,79,.1),transparent 68%)}
+#contact .contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,380px);gap:64px;align-items:end}
+#contact .availability{margin-bottom:18px;font-size:9px;letter-spacing:.06em;text-transform:uppercase}
+#contact .kicker{margin-bottom:13px}
+#contact h2{max-width:760px;font-size:clamp(42px,5.4vw,72px);line-height:.94;letter-spacing:-.06em}
+#contact p{max-width:590px;margin-top:18px;color:#959fac;font-size:12px;line-height:1.75}
+#contact .socials{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+#contact .social{min-height:58px;padding:14px 15px;border:1px solid #252d38;border-radius:13px;background:rgba(255,255,255,.018);color:#d9dfe7;font-size:10px;font-weight:900}
+#contact .social .icon{width:19px;height:19px;color:#ff536b}
+@media(hover:hover){#about .about-card:hover{border-color:#313b49}#about .about-card:first-child:hover{border-color:rgba(255,48,79,.4)}#contact .social:hover{border-color:#3a4452;background:#121821}}
+
+/* Minimal footer */
+footer{padding:28px 0 34px;border-top:1px solid #171d26;background:#07090d;color:#687382;font-size:9px}
+footer .foot{align-items:center;gap:16px}
+footer .foot>div:first-child{font-weight:500;letter-spacing:.015em}
+footer .foot b{color:#e2e6eb;font-weight:900}
+footer .foot>div:last-child{color:#586270}
+
+/* Light mode completion for final sections */
+html[data-theme="light"] #about{background:linear-gradient(180deg,#f7f8fa,#f1f3f6);border-top-color:#dfe4ea}
+html[data-theme="light"] #about .about-card{border-color:#dfe4ea;background:#fff;box-shadow:0 12px 32px rgba(30,38,50,.045)}
+html[data-theme="light"] #about .about-card:first-child{border-color:rgba(233,45,73,.2);background:linear-gradient(145deg,rgba(233,45,73,.045),#fff 48%,#fafbfc)}
+html[data-theme="light"] #about .about-card h3{color:#151a22}
+html[data-theme="light"] #about .about-card p{color:#66717f}
+html[data-theme="light"] #about .pill{border-color:#dbe1e8;color:#66717f;background:#fafbfc}
+html[data-theme="light"] #contact{background:#f1f3f6}
+html[data-theme="light"] #contact .contact{border-color:rgba(233,45,73,.18);background:linear-gradient(135deg,rgba(233,45,73,.055),#fff 42%,#f8f9fb);box-shadow:0 18px 50px rgba(30,38,50,.055)}
+html[data-theme="light"] #contact h2{color:#11151c}
+html[data-theme="light"] #contact p{color:#66717f}
+html[data-theme="light"] #contact .social{border-color:#dfe4ea;background:#fff;color:#303843}
+html[data-theme="light"] footer{border-top-color:#dfe4ea;background:#f7f8fa;color:#77818d}
+html[data-theme="light"] footer .foot b{color:#252c35}
+html[data-theme="light"] footer .foot>div:last-child{color:#87909b}
+
+@media(max-width:760px){
+  #about .about-grid{grid-template-columns:1fr;gap:11px}
+  #about .about-card{min-height:0;padding:25px;border-radius:19px}
+  #about .about-card:first-child::before{top:25px;bottom:25px}
+  #about .about-card h3,#about .about-card:nth-child(2) h3{font-size:24px}
+  #about .about-card p{font-size:11px;margin-top:12px}
+  #about .pills{margin-top:19px}
+  #contact{padding-top:68px;padding-bottom:64px}
+  #contact .contact{padding:30px;border-radius:22px}
+  #contact .contact::before{left:30px;right:30px}
+  #contact .contact-grid{grid-template-columns:1fr;gap:28px}
+  #contact h2{font-size:clamp(38px,10vw,52px)}
+  #contact .socials{grid-template-columns:1fr 1fr}
+  footer{padding-bottom:104px}
+}
+@media(max-width:480px){
+  #about .about-card{padding:22px}
+  #about .about-card:first-child::before{top:22px;bottom:22px}
+  #about .about-card h3,#about .about-card:nth-child(2) h3{font-size:22px}
+  #contact .contact{padding:24px 20px}
+  #contact .contact::before{left:20px;right:20px}
+  #contact h2{font-size:38px}
+  #contact .socials{grid-template-columns:1fr}
+  #contact .social{min-height:52px}
+  footer .foot{justify-content:center;text-align:center}
+}
