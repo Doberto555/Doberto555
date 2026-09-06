@@ -1,0 +1,46 @@
+name: Build OG Preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/og-q24/**'
+      - '.github/workflows/build-og-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-og-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Decode and verify preview
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! compgen -G '.github/og-q24/part*.b64' > /dev/null; then
+            echo 'No OG source parts found; nothing to build.'
+            exit 0
+          fi
+          cat .github/og-q24/part*.b64 | tr -d '\n\r ' | base64 -d > assets/og-preview-v2.jpg
+          echo 'c7e6fe2227fed136dfddb58f25b1745f0d8fa9554987d78b7b7e2f7d6874f92b  assets/og-preview-v2.jpg' | sha256sum -c -
+          rm -rf .github/og-q24
+          rm -f assets/og-preview-v2.txt assets/og-preview-v2.base64
+
+      - name: Commit final image
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -f assets/og-preview-v2.jpg ]; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m 'Build verified OG preview image'
+          git push
