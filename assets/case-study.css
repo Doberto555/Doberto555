@@ -26,3 +26,7 @@ main>section:not(.hero){padding:84px 0 96px;background:linear-gradient(180deg,#0
 .stack{margin-top:16px}.chip{border-radius:9px;background:#10151c}
 .hero h1{font-feature-settings:"ss01" 1,"cv02" 1}
 @media(max-width:760px){.box{min-height:0}.box h2{font-size:11px}}
+
+
+/* No decorative kicker bar */
+.kicker::before{display:none!important}.kicker{gap:0}
