@@ -16,13 +16,14 @@
 <script>try{const t=localStorage.getItem('doberto-theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(_){document.documentElement.dataset.theme='dark'}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/portfolio.css?v=20260905-cinematic2">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/portfolio.css?v=20260912-pro1">
 <link rel="stylesheet" href="assets/portfolio-polish.css?v=20260905-cinematic7">
 <link rel="stylesheet" href="assets/preferences.css?v=20260905-cinematic2">
+<link rel="stylesheet" href="assets/final-clean.css?v=20260912-pro2">
 <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/235633378?v=4">
 <meta property="og:type" content="website"><meta property="og:site_name" content="DOBERTO MRLIT DEV">
-<meta property="og:title" content="DOBERTO MRLIT DEV | Full-Stack Developer"><meta property="og:description" content="Developer behind DOBERTO FLIX, AYITI MARKET, DOBERTO MD V3, DOBERTO VCF and NOVATOP."><meta property="og:url" content="https://dobertomrlit.zone.id/"><meta property="og:image" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final"><meta property="og:image:secure_url" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="600"><meta property="og:image:height" content="315"><meta property="og:image:alt" content="DOBERTO MRLIT DEV portfolio preview">
+<meta property="og:title" content="DOBERTO MRLIT DEV | Full-Stack Developer"><meta property="og:description" content="Developer behind DOBERTO FLIX, AYITI MARKET, DOBERTO MD V3, DOBERTO VCF and NOVATOP."><meta property="og:url" content="https://dobertomrlit.zone.id/"><meta property="og:image" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final"><meta property="og:image:secure_url" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="DOBERTO MRLIT DEV portfolio preview">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="DOBERTO MRLIT DEV | Full-Stack Developer"><meta name="twitter:description" content="Developer behind DOBERTO FLIX, AYITI MARKET, DOBERTO MD V3, DOBERTO VCF and NOVATOP."><meta name="twitter:image" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://dobertomrlit.zone.id/#person","name":"DOBERTO MRLIT DEV","alternateName":["Doberto555","Doberto Mrlit"],"url":"https://dobertomrlit.zone.id/","image":"https://avatars.githubusercontent.com/u/235633378?v=4","jobTitle":"Full-Stack Developer","homeLocation":{"@type":"Country","name":"Haiti"},"email":"mailto:jeandoberto55@gmail.com","sameAs":["https://github.com/Doberto555","https://www.instagram.com/doberto.mr.lit","https://whatsapp.com/channel/0029VbCRDyv0AgWL847SQ419"],"knowsAbout":["Web Development","Android Development","Automation","JavaScript","React","Node.js","Supabase","Firebase","UI/UX"]},{"@type":"WebSite","@id":"https://dobertomrlit.zone.id/#website","url":"https://dobertomrlit.zone.id/","name":"DOBERTO MRLIT DEV","publisher":{"@id":"https://dobertomrlit.zone.id/#person"}}]}</script>
 </head>
@@ -70,21 +71,6 @@ const navLinks=[...document.querySelectorAll('.links a[href^="#"],.bottom-nav a[
 if('IntersectionObserver'in window){const navObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;navLinks.forEach(a=>{const active=a.getAttribute('href')==='#'+entry.target.id;a.classList.toggle('is-active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})})},{rootMargin:'-28% 0px -62% 0px',threshold:0});sections.forEach(s=>navObserver.observe(s))}
 </script>
 <script>try{sessionStorage.setItem('doberto-intro-seen','1')}catch(_){}</script>
-<script src="assets/portfolio-ui.js?v=20260905-cinematic3"></script>
-<script>
-(()=>{
-  const labels={en:{home:'Home',work:'Projects',stack:'Services',about:'About',contact:'Contact'},fr:{home:'Accueil',work:'Projets',stack:'Services',about:'À propos',contact:'Contact'}};
-  const fixBottomLabels=()=>{
-    const lang=document.documentElement.lang==='fr'?'fr':'en',set=labels[lang];
-    document.querySelectorAll('.bottom-nav a').forEach(a=>{
-      [...a.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE).forEach(n=>n.remove());
-      const span=a.querySelector('span');if(!span)return;
-      const key=(a.getAttribute('href')||'').replace('#','');if(set[key])span.textContent=set[key];
-    });
-  };
-  fixBottomLabels();
-  new MutationObserver(fixBottomLabels).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
-})();
-</script>
+<script src="assets/portfolio-ui.js?v=20260912-pro1"></script>
 </body>
 </html>

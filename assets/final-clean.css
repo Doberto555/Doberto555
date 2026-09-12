@@ -85,3 +85,8 @@ html[data-theme="light"] #contact .social .icon{color:#596674!important}
   #stack .tech svg{left:18px!important;width:40px!important;height:40px!important}
   #about .about-card,#about .about-card:first-child{padding:22px!important}
 }
+
+/* Final professional typography */
+html,body,button,input,textarea,select{font-family:Inter,Arial,sans-serif}
+.hero h1,.title,.project h3,#stack .tech span,#about .about-card h3,#contact h2{font-feature-settings:"ss01" 1,"cv02" 1;letter-spacing:-.045em}
+.lead-main,.desc,.project p,#stack .tech small,#about .about-card p,#contact p{font-weight:450}
