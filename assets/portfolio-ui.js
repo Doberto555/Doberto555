@@ -1,5 +1,6 @@
 (()=>{
 'use strict';
+const finalClean=document.createElement('link');finalClean.rel='stylesheet';finalClean.href='assets/final-clean.css?v=20260912-clean1';document.head.append(finalClean);
 const root=document.documentElement;
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
 const safeGet=k=>{try{return localStorage.getItem(k)}catch(_){return null}},safeSet=(k,v)=>{try{localStorage.setItem(k,v)}catch(_){}};
