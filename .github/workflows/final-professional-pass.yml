@@ -1,0 +1,128 @@
+name: Final portfolio professional pass
+
+on:
+  push:
+    paths:
+      - '.github/workflows/final-professional-pass.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Apply final professional pass
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          # ---------- Homepage: font, OG metadata, cache + stylesheet loading ----------
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('family=Roboto:wght@400;500;700;900', 'family=Inter:wght@400;500;600;700;800;900')
+          s = s.replace('assets/portfolio.css?v=20260905-cinematic2', 'assets/portfolio.css?v=20260912-pro1')
+          s = s.replace('assets/portfolio-ui.js?v=20260905-cinematic3', 'assets/portfolio-ui.js?v=20260912-pro1')
+          s = s.replace('<link rel="stylesheet" href="assets/preferences.css?v=20260905-cinematic2">', '<link rel="stylesheet" href="assets/preferences.css?v=20260905-cinematic2">\n<link rel="stylesheet" href="assets/final-clean.css?v=20260912-pro2">')
+          s = s.replace('<meta property="og:image:width" content="600"><meta property="og:image:height" content="315">', '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">')
+          # Remove old inline bottom-nav translation workaround now that source JS is fixed.
+          s = re.sub(r'\n<script>\n\(\(\)=>\{\n  const labels=\{en:.*?\n\}\)\(\);\n</script>', '', s, flags=re.S)
+          p.write_text(s, encoding='utf-8')
+
+          # ---------- Homepage CSS typography ----------
+          p = Path('assets/portfolio.css')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('font-family:Roboto,Arial,sans-serif', 'font-family:Inter,Arial,sans-serif')
+          p.write_text(s, encoding='utf-8')
+
+          # ---------- Remove dynamic CSS loader and fix bottom-nav translation at source ----------
+          p = Path('assets/portfolio-ui.js')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace("const finalClean=document.createElement('link');finalClean.rel='stylesheet';finalClean.href='assets/final-clean.css?v=20260912-clean1';document.head.append(finalClean);\n", '')
+          old = "  $$('.links a[href=\"#work\"],.mobile a[href=\"#work\"],.bottom-nav a[href=\"#work\"]').forEach(e=>setDirectText(e,d.navProjects));$$('.links a[href=\"#stack\"],.mobile a[href=\"#stack\"],.bottom-nav a[href=\"#stack\"]').forEach(e=>setDirectText(e,d.navServices));$$('.links a[href=\"#about\"],.mobile a[href=\"#about\"],.bottom-nav a[href=\"#about\"]').forEach(e=>setDirectText(e,d.navAbout));$$('.links a[href=\"#contact\"],.mobile a[href=\"#contact\"],.bottom-nav a[href=\"#contact\"]').forEach(e=>setDirectText(e,d.navContact));setDirectText($('.bottom-nav a[href=\"#home\"]'),d.home);"
+          new = "  $$('.links a[href=\"#work\"],.mobile a[href=\"#work\"]').forEach(e=>setDirectText(e,d.navProjects));$$('.links a[href=\"#stack\"],.mobile a[href=\"#stack\"]').forEach(e=>setDirectText(e,d.navServices));$$('.links a[href=\"#about\"],.mobile a[href=\"#about\"]').forEach(e=>setDirectText(e,d.navAbout));$$('.links a[href=\"#contact\"],.mobile a[href=\"#contact\"]').forEach(e=>setDirectText(e,d.navContact));const bottomLabels={home:d.home,work:d.navProjects,stack:d.navServices,about:d.navAbout,contact:d.navContact};$$('.bottom-nav a').forEach(a=>{const key=(a.getAttribute('href')||'').replace('#',''),span=$('span',a);if(span&&bottomLabels[key])span.textContent=bottomLabels[key]});"
+          if old not in s:
+              raise SystemExit('portfolio-ui bottom nav target not found')
+          s = s.replace(old, new)
+          p.write_text(s, encoding='utf-8')
+
+          # ---------- Final clean CSS: typography hierarchy ----------
+          p = Path('assets/final-clean.css')
+          s = p.read_text(encoding='utf-8')
+          pro = '''\n/* Final professional typography */\nhtml,body,button,input,textarea,select{font-family:Inter,Arial,sans-serif}\n.hero h1,.title,.project h3,#stack .tech span,#about .about-card h3,#contact h2{font-feature-settings:"ss01" 1,"cv02" 1;letter-spacing:-.045em}\n.lead-main,.desc,.project p,#stack .tech small,#about .about-card p,#contact p{font-weight:450}\n'''
+          if 'Final professional typography' not in s:
+              s += pro
+          p.write_text(s, encoding='utf-8')
+
+          # ---------- Case-study shared CSS ----------
+          p = Path('assets/case-study.css')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('font-family:Roboto,Arial,sans-serif', 'font-family:Inter,Arial,sans-serif')
+          case_pro = '''\n\n/* Final professional case-study pass */\n.identity{border-color:var(--line);background:#0d1118;box-shadow:none}\n.identity::before,.identity::after,.box::before,.box:first-child::after{display:none!important}\n.identity-icon{border-color:#29313d;box-shadow:none}\n.grid{gap:12px}\n.box,.box:first-child{min-height:210px;border-color:var(--line);background:#0d1118}\n.box h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8994a2}\n.box p{font-size:13px;color:#b0b8c3;line-height:1.75}\n.stack{margin-top:16px}.chip{border-radius:9px;background:#10151c}\n.hero h1{font-feature-settings:"ss01" 1,"cv02" 1}\n@media(max-width:760px){.box{min-height:0}.box h2{font-size:11px}}\n'''
+          if 'Final professional case-study pass' not in s:
+              s += case_pro
+          p.write_text(s, encoding='utf-8')
+
+          # ---------- Case-study UI: Problem → Solution → Core features → Status ----------
+          p = Path('assets/case-ui.js')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace("product:'Product',build:'What I build',focus:'Focus'", "product:'Problem',build:'Solution',focus:'Core features'")
+          s = s.replace("product:'Produit',build:'Ce que je développe',focus:'Axes'", "product:'Problème',build:'Solution',focus:'Fonctionnalités clés'")
+          replacements = {
+            "product:'A streaming experience built around content discovery, playback, user profiles and cross-device navigation.',build:'Interface flows, playback experience, responsive behavior, product features, Android integration and ongoing improvements.'": "product:'Deliver a streaming experience that keeps discovery, profiles, playback and Live TV coherent across web and Android, especially on mobile.',build:'I built and iterated the interface, playback flows, responsive navigation, profile features and Android integration around one consistent product experience.'",
+            "product:'Une expérience de streaming centrée sur la découverte de contenus, la lecture, les profils utilisateurs et la navigation multi-appareils.',build:'Je développe les parcours d’interface, l’expérience de lecture, le responsive, les fonctionnalités produit, l’intégration Android et les améliorations continues.'": "product:'Offrir une expérience de streaming cohérente entre découverte, profils, lecture et TV en direct sur le web et Android, avec une priorité mobile.',build:'J’ai conçu et amélioré les interfaces, les parcours de lecture, la navigation responsive, les profils et l’intégration Android autour d’une expérience produit cohérente.'",
+            "product:'A marketplace experience focused on making listings, discovery and seller communication practical on mobile.',build:'Responsive interface flows, listing experience, discovery, messaging and the core buying and selling journey.'": "product:'Make listing, discovering products and contacting sellers practical on phones for a Haiti-focused marketplace.',build:'I designed responsive listing and discovery flows, seller messaging and the main buying and selling journey with mobile usability as the priority.'",
+            "product:'Une expérience marketplace conçue pour rendre les annonces, la découverte et la communication avec les vendeurs simples sur mobile.',build:'Je développe les parcours responsives, l’expérience des annonces, la découverte, la messagerie et le parcours principal d’achat et de vente.'": "product:'Rendre la publication d’annonces, la découverte des produits et le contact avec les vendeurs simples sur mobile pour un marketplace centré sur Haïti.',build:'J’ai conçu les parcours responsives d’annonces et de découverte, la messagerie vendeur et le parcours principal d’achat et de vente avec une priorité mobile.'",
+            "product:'An automation platform designed around multi-device pairing, session visibility and command access.',build:'Pairing flows, session controls, command interfaces, integrations and the web experience used to manage the platform.'": "product:'Make multi-device pairing and session management understandable while keeping commands and integrations easy to access.',build:'I built the pairing flow, session controls, command surfaces, integrations and management interface around clear operational states.'",
+            "product:'Une plateforme d’automatisation conçue autour de l’appairage multi-appareils, de la visibilité des sessions et de l’accès aux commandes.',build:'Je développe les parcours d’appairage, les contrôles de session, les interfaces de commandes, les intégrations et l’expérience web de gestion.'": "product:'Rendre l’appairage multi-appareils et la gestion des sessions compréhensibles tout en gardant les commandes et intégrations faciles d’accès.',build:'J’ai construit le parcours d’appairage, les contrôles de session, les interfaces de commandes, les intégrations et l’interface de gestion autour d’états clairs.'",
+            "product:'A utility platform for organizing contact-oriented workflows and practical community actions.',build:'Contact flows, mobile interfaces, onboarding, utility actions and product improvements around the VCF experience.'": "product:'Turn contact registration and VCF-oriented community workflows into a simple mobile process without unnecessary technical steps.',build:'I built onboarding, contact flows, VCF utility actions and mobile screens around a straightforward user journey.'",
+            "product:'Une plateforme utilitaire pour organiser les workflows liés aux contacts et les actions communautaires pratiques.',build:'Je développe les parcours de contacts, les interfaces mobiles, l’onboarding, les actions utilitaires et les améliorations de l’expérience VCF.'": "product:'Transformer l’inscription des contacts et les workflows VCF communautaires en un processus mobile simple, sans étapes techniques inutiles.',build:'J’ai construit l’onboarding, les parcours de contacts, les actions VCF et les écrans mobiles autour d’un parcours utilisateur direct.'"
+          }
+          for a,b in replacements.items():
+              if a not in s:
+                  raise SystemExit('case-ui content target not found: '+a[:45])
+              s = s.replace(a,b)
+          p.write_text(s, encoding='utf-8')
+
+          # ---------- Case-study HTML pages ----------
+          page_data = {
+            'case-studies/doberto-flix.html': (
+              'Deliver a streaming experience that keeps discovery, profiles, playback and Live TV coherent across web and Android, especially on mobile.',
+              'I built and iterated the interface, playback flows, responsive navigation, profile features and Android integration around one consistent product experience.'),
+            'case-studies/ayiti-market.html': (
+              'Make listing, discovering products and contacting sellers practical on phones for a Haiti-focused marketplace.',
+              'I designed responsive listing and discovery flows, seller messaging and the main buying and selling journey with mobile usability as the priority.'),
+            'case-studies/doberto-md-v3.html': (
+              'Make multi-device pairing and session management understandable while keeping commands and integrations easy to access.',
+              'I built the pairing flow, session controls, command surfaces, integrations and management interface around clear operational states.'),
+            'case-studies/doberto-vcf.html': (
+              'Turn contact registration and VCF-oriented community workflows into a simple mobile process without unnecessary technical steps.',
+              'I built onboarding, contact flows, VCF utility actions and mobile screens around a straightforward user journey.')
+          }
+          for fn,(problem,solution) in page_data.items():
+              p=Path(fn); s=p.read_text(encoding='utf-8')
+              s=s.replace('family=Roboto:wght@400;500;700;900','family=Inter:wght@400;500;600;700;800;900')
+              s=s.replace('../assets/case-study.css?v=20260905-cinematic1','../assets/case-study.css?v=20260912-pro1')
+              s=s.replace('../assets/case-ui.js?v=20260905-cinematic1','../assets/case-ui.js?v=20260912-pro1')
+              s=s.replace('<meta property="og:image" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final"><meta name="twitter:card" content="summary_large_image">', '<meta property="og:image" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final">')
+              pattern=r'<div class="grid"><article class="box"><h2>Product</h2><p>.*?</p></article><article class="box"><h2>What I build</h2><p>.*?</p></article><article class="box"><h2>Focus</h2>'
+              repl=f'<div class="grid"><article class="box"><h2>Problem</h2><p>{problem}</p></article><article class="box"><h2>Solution</h2><p>{solution}</p></article><article class="box"><h2>Core features</h2>'
+              s2,n=re.subn(pattern,repl,s,count=1,flags=re.S)
+              if n!=1: raise SystemExit('case HTML grid target not found: '+fn)
+              p.write_text(s2,encoding='utf-8')
+
+          # Remove this one-shot workflow from the final repository state.
+          Path('.github/workflows/final-professional-pass.yml').unlink()
+          PY
+      - name: Commit polished portfolio
+        run: |
+          git config user.name "DOBERTO MRLIT DEV"
+          git config user.email "235633378+Doberto555@users.noreply.github.com"
+          git add -A
+          git commit -m "Finish professional portfolio polish"
+          git push
