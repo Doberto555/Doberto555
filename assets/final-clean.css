@@ -1,0 +1,87 @@
+/* Final clean premium pass — 2026-09-12 */
+
+/* Remove decorative mini-bars and reduce visual noise */
+.kicker::before{display:none!important}
+.project::after,#stack .tech::after,#about .about-card::before,#about .about-card::after,#contact .contact::before,#contact .contact::after{display:none!important}
+
+/* Projects: neutral studio cards, accents only where meaningful */
+.project{border-color:#222a35!important;background:#0c1016!important;box-shadow:none!important}
+.project::before{background:none!important}
+.project:hover{border-color:#303a47!important;background:#0e131a!important}
+.product-mark{border-color:#29323e!important;background:#090d12!important;box-shadow:none!important}
+.product-mark img{background:#090d12!important}
+.project .live{border-color:#303946!important;background:#0a0f15!important;color:#b9c2cd!important}
+.project .live-dot{background:var(--accent)!important;box-shadow:none!important}
+.project .chips{gap:12px!important}
+.project .chip{padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;color:#7d8794!important;font-size:8px!important}
+.project .chip:nth-child(n+3){display:none!important}
+.project .chip:not(:last-child)::after{content:"·";margin-left:12px;color:#404956}
+.project-actions{border-top:1px solid #1d252f;padding-top:18px;margin-top:22px!important}
+.project-actions .primary{background:var(--accent)!important;color:#fff!important}
+.project-actions a:not(.primary){border-color:#29323e!important;background:transparent!important;color:#b5bdc8!important}
+
+/* Services: no numbers, no side bars, cleaner cards */
+#stack .stack{gap:16px!important}
+#stack .tech{min-height:172px!important;padding:28px 28px 28px 102px!important;border-color:#222a35!important;background:#0c1016!important;border-radius:18px!important}
+#stack .tech::before{display:none!important}
+#stack .tech:hover{border-color:#303a47!important;background:#0e131a!important}
+#stack .tech svg{left:28px!important;width:50px!important;height:50px!important;border-color:#27313d!important;background:#090d12!important;box-shadow:none!important}
+#stack .tech span{font-size:18px!important}
+#stack .tech small{color:#8893a1!important}
+#stack .stack-tools{border-top-color:#1b222b!important;margin-top:34px!important;padding-top:24px!important}
+#stack .stack-tools>span{border-color:#222b36!important;background:#0a0f15!important;border-radius:10px!important;box-shadow:none!important}
+
+/* About: editorial panels, no colored edge/glow, no dashboard pills */
+#about{background:#080b10!important;border-top-color:#151b23!important}
+#about .about-grid{grid-template-columns:1fr 1fr!important;gap:16px!important}
+#about .about-card,#about .about-card:first-child{min-height:230px!important;padding:34px!important;border-color:#222a35!important;background:#0c1016!important;box-shadow:none!important}
+#about .about-card:hover,#about .about-card:first-child:hover{border-color:#303a47!important}
+#about .about-card h3{font-size:clamp(25px,2.4vw,34px)!important}
+#about .about-card:nth-child(2) h3{font-size:clamp(25px,2.4vw,34px)!important}
+#about .pills{gap:0 16px!important;margin-top:24px!important}
+#about .pill{position:relative;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;color:#7e8996!important;font-size:8px!important}
+#about .pill:not(:last-child)::after{content:"·";margin-left:16px;color:#404956}
+
+/* Contact: one calm final CTA instead of another accented card */
+#contact{background:#080b10!important}
+#contact .contact{border-color:#232c37!important;background:#0c1016!important;box-shadow:none!important}
+#contact .availability{color:#7f8b98!important}
+#contact .social{border-color:#27313d!important;background:#090e14!important;box-shadow:none!important}
+#contact .social .icon{color:#aeb8c4!important}
+#contact .social:hover{border-color:#394553!important;background:#0e141c!important}
+
+/* Light mode: same restrained hierarchy */
+html[data-theme="light"] .project{border-color:#dfe4ea!important;background:#fff!important;box-shadow:0 10px 30px rgba(24,32,44,.035)!important}
+html[data-theme="light"] .project:hover{border-color:#cbd3dc!important;background:#fff!important}
+html[data-theme="light"] .product-mark{border-color:#dce2e8!important;background:#fff!important}
+html[data-theme="light"] .product-mark img{background:#fff!important}
+html[data-theme="light"] .project .live{border-color:#dce2e8!important;background:#f8f9fb!important;color:#5f6976!important}
+html[data-theme="light"] .project .chip{color:#6c7682!important}
+html[data-theme="light"] .project-actions{border-top-color:#e3e7ec!important}
+html[data-theme="light"] .project-actions a:not(.primary){border-color:#d8dee6!important;color:#4f5965!important}
+html[data-theme="light"] #stack .tech{border-color:#dfe4ea!important;background:#fff!important;box-shadow:none!important}
+html[data-theme="light"] #stack .tech:hover{border-color:#cbd3dc!important;background:#fff!important}
+html[data-theme="light"] #stack .tech svg{border-color:#dce2e8!important;background:#fff!important}
+html[data-theme="light"] #stack .stack-tools{border-top-color:#e1e5ea!important}
+html[data-theme="light"] #stack .stack-tools>span{border-color:#dfe4ea!important;background:#fff!important;color:#53606e!important;box-shadow:none!important}
+html[data-theme="light"] #about{background:#f5f7f9!important;border-top-color:#e1e5ea!important}
+html[data-theme="light"] #about .about-card,html[data-theme="light"] #about .about-card:first-child{border-color:#dfe4ea!important;background:#fff!important;box-shadow:none!important}
+html[data-theme="light"] #about .pill{color:#687482!important}
+html[data-theme="light"] #contact{background:#f5f7f9!important}
+html[data-theme="light"] #contact .contact{border-color:#dfe4ea!important;background:#fff!important;box-shadow:none!important}
+html[data-theme="light"] #contact .social{border-color:#dfe4ea!important;background:#f8f9fb!important;color:#303843!important}
+html[data-theme="light"] #contact .social .icon{color:#596674!important}
+
+@media(max-width:760px){
+  .project-actions{padding-top:15px!important}
+  #stack .tech{min-height:142px!important;padding:22px 22px 22px 82px!important}
+  #stack .tech svg{left:22px!important;width:44px!important;height:44px!important}
+  #about .about-grid{grid-template-columns:1fr!important}
+  #about .about-card,#about .about-card:first-child{min-height:0!important;padding:25px!important}
+}
+
+@media(max-width:480px){
+  #stack .tech{min-height:136px!important;padding:20px 18px 20px 72px!important}
+  #stack .tech svg{left:18px!important;width:40px!important;height:40px!important}
+  #about .about-card,#about .about-card:first-child{padding:22px!important}
+}
