@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "baseline_at": "2026-09-15",
   "auto_add_new_repositories": true,
   "owner": "Doberto555",
@@ -18,18 +18,20 @@
     "Doberto555/DOBERTO-MINI-BOT-V1"
   ],
   "portfolio_projects": [
+    "Doberto555/DOBERTO-MINI-BOT-V1",
     "Doberto555/DOBERTO-FLIX",
     "AYITI MARKET",
     "Doberto555/DOBERTO-MD-V3",
     "Doberto555/DOBERTO-VCF",
-    "Doberto555/NOVATOP",
-    "Doberto555/DOBERTO-MINI-BOT-V1"
+    "Doberto555/NOVATOP"
   ],
   "rules": {
     "ignore_archived": true,
     "ignore_forks": true,
     "ignore_portfolio_repo": true,
     "new_repositories_only_after_baseline": true,
-    "prefer_production_domain_over_vercel_preview": true
+    "prefer_production_domain_over_vercel_preview": true,
+    "project_order": "newest_first",
+    "prefer_reliable_public_icon_url": true
   }
 }
