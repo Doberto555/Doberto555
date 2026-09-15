@@ -9,18 +9,18 @@ const dictionaries={
 };
 const projects={
   en:[
+    {desc:'Multi-session WhatsApp automation bot with pairing, session management and practical command workflows.',chips:['Automation','Pairing','Multi-session','WhatsApp']},
     {desc:'Streaming platform for films, series and Live TV with a mobile-first experience.',chips:['Web','Android','Streaming','Profiles']},
     {desc:'Marketplace for Haiti with listings, discovery, messaging and responsive buying and selling flows.',chips:['Marketplace','Responsive','Messaging','Haiti']},
     {desc:'Multi-device automation platform with pairing, sessions, commands and practical bot workflows.',chips:['Automation','Multi-device','Pairing','Sessions']},
-    {desc:'Contact utility platform built around VCF workflows, WhatsApp communities and visibility tools.',chips:['Utility','Contacts','WhatsApp','Community']},
-    {desc:'Multi-session WhatsApp automation bot with pairing, session management and practical command workflows.',chips:['Automation','Pairing','Multi-session','WhatsApp']}
+    {desc:'Contact utility platform built around VCF workflows, WhatsApp communities and visibility tools.',chips:['Utility','Contacts','WhatsApp','Community']}
   ],
   fr:[
+    {desc:'Bot d’automatisation WhatsApp multi-session avec appairage, gestion des sessions et commandes pratiques.',chips:['Automatisation','Appairage','Multi-session','WhatsApp']},
     {desc:'Plateforme de streaming pour films, séries et TV en direct, pensée pour une expérience mobile fluide.',chips:['Web','Android','Streaming','Profils']},
     {desc:'Marketplace pour Haïti avec annonces, découverte, messagerie et parcours d’achat et de vente responsive.',chips:['Marketplace','Responsive','Messagerie','Haïti']},
     {desc:'Plateforme d’automatisation multi-appareils avec appairage, sessions, commandes et workflows de bot.',chips:['Automatisation','Multi-appareils','Appairage','Sessions']},
-    {desc:'Plateforme utilitaire autour des fichiers VCF, des communautés WhatsApp et des outils de visibilité.',chips:['Utilitaire','Contacts','WhatsApp','Communauté']},
-    {desc:'Bot d’automatisation WhatsApp multi-session avec appairage, gestion des sessions et commandes pratiques.',chips:['Automatisation','Appairage','Multi-session','WhatsApp']}
+    {desc:'Plateforme utilitaire autour des fichiers VCF, des communautés WhatsApp et des outils de visibilité.',chips:['Utilitaire','Contacts','WhatsApp','Communauté']}
   ]
 };
 const services={
