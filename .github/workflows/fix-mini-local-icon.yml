@@ -1,0 +1,99 @@
+name: Fix MINI MD local icon
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Copy real bot image locally
+        run: |
+          mkdir -p assets/project-icons
+          curl -fsSL "https://raw.githubusercontent.com/Doberto555/DOBERTO-MINI-BOT-V1/main/bot-image.jpg" -o assets/project-icons/doberto-mini-md.jpg
+          test -s assets/project-icons/doberto-mini-md.jpg
+
+      - name: Fix icon paths and translation order
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          # Homepage: always use a local asset for MINI MD.
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          for old in [
+              'https://raw.githubusercontent.com/Doberto555/DOBERTO-MINI-BOT-V1/main/bot-logo-v4.svg',
+              'https://doberto-minibot-v1.vercel.app/bot-logo-v4.svg',
+              'https://doberto-minibot-v1.vercel.app/bot-image.jpg'
+          ]:
+              s = s.replace(old, 'assets/project-icons/doberto-mini-md.jpg')
+          p.write_text(s, encoding='utf-8')
+
+          # Case study: local path is one directory up.
+          p = Path('case-studies/doberto-mini-md.html')
+          s = p.read_text(encoding='utf-8')
+          for old in [
+              'https://raw.githubusercontent.com/Doberto555/DOBERTO-MINI-BOT-V1/main/bot-logo-v4.svg',
+              'https://doberto-minibot-v1.vercel.app/bot-logo-v4.svg',
+              'https://doberto-minibot-v1.vercel.app/bot-image.jpg',
+              'assets/project-icons/doberto-mini-md.jpg'
+          ]:
+              s = s.replace(old, '../assets/project-icons/doberto-mini-md.jpg')
+          p.write_text(s, encoding='utf-8')
+
+          # MINI MD is the first card, so its translation object must also be first.
+          p = Path('assets/portfolio-ui.js')
+          s = p.read_text(encoding='utf-8')
+          en_mini = "    {desc:'Multi-session WhatsApp automation bot with pairing, session management and practical command workflows.',chips:['Automation','Pairing','Multi-session','WhatsApp']}"
+          fr_mini = "    {desc:'Bot d’automatisation WhatsApp multi-session avec appairage, gestion des sessions et commandes pratiques.',chips:['Automatisation','Appairage','Multi-session','WhatsApp']}"
+          en_first = "    {desc:'Streaming platform for films, series and Live TV with a mobile-first experience.',chips:['Web','Android','Streaming','Profiles']}"
+          fr_first = "    {desc:'Plateforme de streaming pour films, séries et TV en direct, pensée pour une expérience mobile fluide.',chips:['Web','Android','Streaming','Profils']}"
+
+          # Remove MINI from its old last position, then insert it first.
+          s = s.replace(',\n' + en_mini + '\n  ],\n  fr:[', '\n  ],\n  fr:[')
+          s = s.replace(',\n' + fr_mini + '\n  ]\n};', '\n  ]\n};')
+          if '  en:[\n' + en_mini not in s:
+              s = s.replace('  en:[\n' + en_first, '  en:[\n' + en_mini + ',\n' + en_first, 1)
+          if '  fr:[\n' + fr_mini not in s:
+              s = s.replace('  fr:[\n' + fr_first, '  fr:[\n' + fr_mini + ',\n' + fr_first, 1)
+          p.write_text(s, encoding='utf-8')
+
+          # Remove this one-time workflow after the fix.
+          Path('.github/workflows/fix-mini-local-icon.yml').unlink(missing_ok=True)
+          PY
+
+      - name: Verify fix
+        run: |
+          grep -q 'assets/project-icons/doberto-mini-md.jpg' index.html
+          grep -q '../assets/project-icons/doberto-mini-md.jpg' case-studies/doberto-mini-md.html
+          test -s assets/project-icons/doberto-mini-md.jpg
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('assets/portfolio-ui.js').read_text(encoding='utf-8')
+          en=s.split('const projects={',1)[1].split('fr:[',1)[0]
+          fr=s.split('fr:[',1)[1].split(']};',1)[0]
+          assert en.find('Multi-session WhatsApp automation bot') < en.find('Streaming platform for films')
+          assert fr.find('Bot d’automatisation WhatsApp multi-session') < fr.find('Plateforme de streaming pour films')
+          print('MINI MD icon and translation order verified')
+          PY
+
+      - name: Commit fix
+        run: |
+          git config user.name "DOBERTO MRLIT DEV"
+          git config user.email "235633378+Doberto555@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes needed"
+            exit 0
+          fi
+          git commit -m "Use local MINI MD icon and fix project copy order"
+          git pull --rebase origin main
+          git push origin main
