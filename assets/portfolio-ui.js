@@ -9,6 +9,7 @@ const dictionaries={
 };
 const projects={
   en:[
+    {desc:'Gaming proxy dashboard with Google sign-in, first-login registration, protected access and server status tools.',chips:['Web','Supabase','Google OAuth','Gaming']},
     {desc:'Multi-session WhatsApp automation bot with pairing, session management and practical command workflows.',chips:['Automation','Pairing','Multi-session','WhatsApp']},
     {desc:'Streaming platform for films, series and Live TV with a mobile-first experience.',chips:['Web','Android','Streaming','Profiles']},
     {desc:'Marketplace for Haiti with listings, discovery, messaging and responsive buying and selling flows.',chips:['Marketplace','Responsive','Messaging','Haiti']},
@@ -16,6 +17,7 @@ const projects={
     {desc:'Contact utility platform built around VCF workflows, WhatsApp communities and visibility tools.',chips:['Utility','Contacts','WhatsApp','Community']}
   ],
   fr:[
+    {desc:'Tableau de bord proxy gaming avec connexion Google, inscription au premier accès, espace protégé et outils d’état des serveurs.',chips:['Web','Supabase','Google OAuth','Gaming']},
     {desc:'Bot d’automatisation WhatsApp multi-session avec appairage, gestion des sessions et commandes pratiques.',chips:['Automatisation','Appairage','Multi-session','WhatsApp']},
     {desc:'Plateforme de streaming pour films, séries et TV en direct, pensée pour une expérience mobile fluide.',chips:['Web','Android','Streaming','Profils']},
     {desc:'Marketplace pour Haïti avec annonces, découverte, messagerie et parcours d’achat et de vente responsive.',chips:['Marketplace','Responsive','Messagerie','Haïti']},

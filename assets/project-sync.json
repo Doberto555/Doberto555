@@ -15,9 +15,11 @@
     "Doberto555/Doberto555",
     "Doberto555/DOBERTO-APK",
     "Doberto555/MINIT-PAY",
-    "Doberto555/DOBERTO-MINI-BOT-V1"
+    "Doberto555/DOBERTO-MINI-BOT-V1",
+    "Doberto555/DOBERTO-FF-PROXY"
   ],
   "portfolio_projects": [
+    "Doberto555/DOBERTO-FF-PROXY",
     "Doberto555/DOBERTO-MINI-BOT-V1",
     "Doberto555/DOBERTO-FLIX",
     "AYITI MARKET",
@@ -32,6 +34,7 @@
     "new_repositories_only_after_baseline": true,
     "prefer_production_domain_over_vercel_preview": true,
     "project_order": "newest_first",
-    "prefer_reliable_public_icon_url": true
+    "prefer_reliable_public_icon_url": false,
+    "prefer_verified_local_icon": true
   }
 }
