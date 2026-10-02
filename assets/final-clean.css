@@ -496,3 +496,30 @@ html[data-theme="light"] .footer-bottom a{color:#596572}
   .footer-brand{grid-column:auto}
   .footer-bottom{align-items:flex-start;flex-direction:column;gap:8px;padding-bottom:90px}
 }
+
+
+/* Project filters */
+.project-filterbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 18px}
+.project-filters{display:flex;flex-wrap:wrap;gap:7px}
+.project-filter{appearance:none;border:1px solid #27303a;border-radius:999px;background:#0b0f15;color:#7f8a97;padding:8px 12px;font:inherit;font-size:8px;font-weight:900;letter-spacing:.04em;cursor:pointer}
+.project-filter.is-active{border-color:#dce3eb;background:#e7edf4;color:#0a0e14}
+.project-search{display:flex;align-items:center;gap:8px;min-width:230px;height:38px;padding:0 11px;border:1px solid #27303a;border-radius:12px;background:#0b0f15}
+.project-search svg{width:15px;height:15px;fill:none;stroke:#6d7885;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.project-search input{width:100%;border:0;outline:0;background:transparent;color:#e7ecf2;font:inherit;font-size:9px}
+.project-search input::placeholder{color:#5f6976}
+.project-filter-status{min-height:18px;margin:-7px 0 17px;color:#687482;font-size:8px}
+.filterable-project{transition:opacity .18s ease,transform .18s ease}
+.filterable-project.is-filtered-out{display:none!important}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+html[data-theme="light"] .project-filter{border-color:#dce2e8;background:#fff;color:#65717e}
+html[data-theme="light"] .project-filter.is-active{border-color:#222a33;background:#222a33;color:#fff}
+html[data-theme="light"] .project-search{border-color:#dce2e8;background:#fff}
+html[data-theme="light"] .project-search input{color:#171c23}
+@media(hover:hover){.project-filter:hover{border-color:#3a4552;color:#dfe6ee}}
+@media(max-width:760px){
+  .project-filterbar{align-items:stretch;flex-direction:column}
+  .project-filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+  .project-filters::-webkit-scrollbar{display:none}
+  .project-filter{flex:0 0 auto}
+  .project-search{min-width:0;width:100%}
+}
