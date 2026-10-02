@@ -8,7 +8,7 @@
 
 **I turn ideas into clean, useful and modern digital products.**
 
-[GitHub](https://github.com/Doberto555) · [DOBERTO FLIX](https://dobertoflix.com) · [AYITI MARKET](https://ayiti-market.com) · [DOBERTO VCF](https://dobertovcf.online)
+[Portfolio](https://dobertomrlit.zone.id) · [GitHub](https://github.com/Doberto555) · [DOBERTO FLIX](https://dobertoflix.com) · [AYITI MARKET](https://ayiti-market.com) · [DOBERTO VCF](https://dobertovcf.online)
 
 </div>
 
@@ -63,14 +63,14 @@ A mobile-first marketplace designed to simplify buying, selling, publishing list
 ## DOBERTO MD V3
 
 <p align="center">
-  <a href="https://doberto-md-v3.vercel.app">
+  <a href="https://doberto-md-v3.duckdns.org">
     <img src="https://raw.githubusercontent.com/Doberto555/Doberto555/main/assets/doberto-md-v3.svg" width="100%" alt="DOBERTO MD V3" />
   </a>
 </p>
 
 A multi-device automation ecosystem with pairing, session management, commands, integrations and bot tooling.
 
-**[OPEN DOBERTO MD V3 →](https://doberto-md-v3.vercel.app)**
+**[OPEN DOBERTO MD V3 →](https://doberto-md-v3.duckdns.org)**
 
 ---
 
