@@ -108,4 +108,4 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 document.querySelectorAll('.product-mark img').forEach(img=>img.addEventListener('error',()=>{const parent=img.parentElement;parent.textContent=img.dataset.fallback||'';parent.style.fontWeight='900';parent.style.color='var(--accent)';parent.setAttribute('aria-label',img.alt)}));
 const items=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.08});items.forEach(i=>io.observe(i))}else items.forEach(i=>i.classList.add('show'));
 </script>
-<script src="assets/portfolio-ui.js?v=20261001-selected1"></script></body></html>
+<script src="assets/portfolio-ui.js?v=20261001-selected2"></script></body></html>
