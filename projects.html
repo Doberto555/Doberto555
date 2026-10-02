@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="assets/portfolio.css?v=20260912-pro1">
 <link rel="stylesheet" href="assets/portfolio-polish.css?v=20260905-cinematic7">
 <link rel="stylesheet" href="assets/preferences.css?v=20260905-cinematic2">
-<link rel="stylesheet" href="assets/final-clean.css?v=20261001-pages1">
+<link rel="stylesheet" href="assets/final-clean.css?v=20261001-pro10">
 <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/235633378?v=4">
 <meta property="og:type" content="website"><meta property="og:site_name" content="DOBERTO MRLIT DEV">
 <meta property="og:title" content="DOBERTO MRLIT DEV | Full-Stack Developer"><meta property="og:description" content="Developer behind DOBERTO HOST, DOBERTO FF PROXY, DOBERTO MINI MD, DOBERTO FLIX, AYITI MARKET, DOBERTO MD V3, DOBERTO VCF and NOVATOP."><meta property="og:url" content="https://dobertomrlit.zone.id/"><meta property="og:image" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final"><meta property="og:image:secure_url" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="DOBERTO MRLIT DEV portfolio preview">
@@ -76,6 +76,11 @@
   </div>
 </div>
 
+<div class="project-stream-head reveal">
+  <div><span class="featured-label">Web platforms & systems</span><h3>Live products and infrastructure.</h3></div>
+  <p>Web platforms, automation systems and production services with live deployments or case studies.</p>
+</div>
+
 <div class="project-list">
 <article class="project reveal" style="--accent:#7c5cff" data-no-live="true"><div class="product-mark"><img src="assets/project-icons/doberto-host.svg" width="82" height="82" alt="DOBERTO HOST icon" decoding="async" loading="lazy" data-fallback="DH"></div><div class="project-main"><div class="project-title-row"><h3>DOBERTO HOST</h3><span class="source-private">Private source</span><span class="domain">Self-hosted · VPS</span></div><p>Self-hosted bot hosting storefront and dashboard with Pterodactyl provisioning, client controls and protected backend infrastructure.</p><div class="chips"><span class="chip">Node.js</span><span class="chip">Pterodactyl</span><span class="chip">VPS</span><span class="chip">Hosting</span></div></div><div class="project-actions"><a href="case-studies/doberto-host.html">Case study<span class="icon"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span></a></div></article>
 <article class="project reveal" style="--accent:#ff5a3d"><div class="product-mark"><img src="assets/project-icons/doberto-ff-proxy.svg" width="82" height="82" alt="DOBERTO FF PROXY icon" decoding="async" loading="lazy" data-fallback="FF"></div><div class="project-main"><div class="project-title-row"><h3>DOBERTO FF PROXY</h3><span class="live"><span class="live-dot"></span>Live</span><span class="source-private">Private source</span><span class="domain">doberto-ff-proxy.duckdns.org</span></div><p>Gaming proxy dashboard with Google sign-in, first-login registration, protected access and server status tools.</p><div class="chips"><span class="chip">Web</span><span class="chip">Supabase</span><span class="chip">Google OAuth</span><span class="chip">Gaming</span></div></div><div class="project-actions"><a class="primary" href="https://doberto-ff-proxy.duckdns.org" target="_blank" rel="noopener noreferrer">Open live<span class="icon"><svg viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span></a><a href="case-studies/doberto-ff-proxy.html">Case study<span class="icon"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span></a></div></article>
@@ -100,4 +105,4 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 document.querySelectorAll('.product-mark img').forEach(img=>img.addEventListener('error',()=>{const parent=img.parentElement;parent.textContent=img.dataset.fallback||'';parent.style.fontWeight='900';parent.style.color='var(--accent)';parent.setAttribute('aria-label',img.alt)}));
 const items=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.08});items.forEach(i=>io.observe(i))}else items.forEach(i=>i.classList.add('show'));
 </script>
-<script src="assets/portfolio-ui.js?v=20261001-pages1"></script></body></html>
+<script src="assets/portfolio-ui.js?v=20261001-pro10"></script></body></html>
