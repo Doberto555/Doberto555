@@ -412,3 +412,29 @@ html[data-theme="light"] .page-hero-index small{color:#7c8793}
   .page-hero-actions{display:grid;grid-template-columns:1fr 1fr}
 }
 @media(max-width:430px){.page-hero-actions{grid-template-columns:1fr}}
+
+
+/* Page depth sections */
+.page-extra-section{padding-top:54px!important;padding-bottom:54px!important;border-top:1px solid #151b23}
+.outcome-grid,.developer-focus-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.outcome-card,.focus-card,.guide-card{padding:24px;border:1px solid #222a35;border-radius:18px;background:#0c1016}
+.outcome-card>span,.focus-card>span,.guide-card>span{display:block;margin-bottom:28px;color:#56616e;font-size:9px;font-weight:900;letter-spacing:.12em}
+.outcome-card h3,.focus-card h3,.guide-card h3{margin:0 0 9px;color:#eef2f6;font-size:18px;letter-spacing:-.035em}
+.outcome-card p,.focus-card p,.guide-card p{margin:0;color:#84909d;font-size:10px;line-height:1.7}
+.contact-guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.page-final-cta{padding:54px 0!important;border-top:1px solid #151b23}
+.final-cta-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:center;padding:34px;border:1px solid #27313c;border-radius:22px;background:#0c1118}
+.final-cta-card h2{margin:7px 0 10px;color:#f0f3f7;font-size:clamp(28px,4vw,46px);letter-spacing:-.05em}
+.final-cta-card p{max-width:720px;margin:0;color:#8994a1;font-size:11px;line-height:1.7}
+.final-cta-card .btn{min-width:170px;justify-content:center}
+html[data-theme="light"] .page-extra-section,html[data-theme="light"] .page-final-cta{border-top-color:#e1e5ea}
+html[data-theme="light"] .outcome-card,html[data-theme="light"] .focus-card,html[data-theme="light"] .guide-card,html[data-theme="light"] .final-cta-card{border-color:#dfe4ea;background:#fff}
+html[data-theme="light"] .outcome-card h3,html[data-theme="light"] .focus-card h3,html[data-theme="light"] .guide-card h3,html[data-theme="light"] .final-cta-card h2{color:#171c23}
+html[data-theme="light"] .outcome-card p,html[data-theme="light"] .focus-card p,html[data-theme="light"] .guide-card p,html[data-theme="light"] .final-cta-card p{color:#687482}
+@media(max-width:980px){.outcome-grid,.developer-focus-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+  .page-extra-section,.page-final-cta{padding-top:38px!important;padding-bottom:38px!important}
+  .outcome-grid,.developer-focus-grid,.contact-guide-grid{grid-template-columns:1fr}
+  .final-cta-card{grid-template-columns:1fr;padding:25px}
+  .final-cta-card .btn{width:100%}
+}
