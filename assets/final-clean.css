@@ -90,3 +90,66 @@ html[data-theme="light"] #contact .social .icon{color:#596674!important}
 html,body,button,input,textarea,select{font-family:Inter,Arial,sans-serif}
 .hero h1,.title,.project h3,#stack .tech span,#about .about-card h3,#contact h2{font-feature-settings:"ss01" 1,"cv02" 1;letter-spacing:-.045em}
 .lead-main,.desc,.project p,#stack .tech small,#about .about-card p,#contact p{font-weight:450}
+
+
+/* Portfolio Pro V3 — proof, process and conversion */
+.proof-strip{padding:0!important;border-bottom:1px solid #151b23;background:#080b10}
+.proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-left:1px solid #1b222c}
+.proof-grid>div{min-height:112px;padding:26px 24px;border-right:1px solid #1b222c;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.proof-grid strong{font-size:12px;color:#e7ebf0;letter-spacing:-.02em}
+.proof-grid span{font-size:9px;line-height:1.55;color:#76818e}
+
+#process{background:#070a0f;border-top:1px solid #151b23;border-bottom:1px solid #151b23}
+.process-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.process-card{min-height:220px;padding:25px;border:1px solid #222a35;border-radius:18px;background:#0c1016}
+.process-card>span{display:block;margin-bottom:34px;color:#596573;font-size:10px;font-weight:900;letter-spacing:.12em}
+.process-card h3{font-size:20px;letter-spacing:-.035em;color:#eef1f5}
+.process-card p{margin:10px 0 0;color:#84909d;font-size:10px;line-height:1.7}
+
+.contact-side{display:flex;flex-direction:column;gap:14px}
+.project-brief{padding:18px;border:1px solid #27313d;border-radius:16px;background:#090e14}
+.project-brief label{display:block;margin:0 0 11px}
+.project-brief label>span{display:block;margin-bottom:6px;color:#8b96a3;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.project-brief input,.project-brief select,.project-brief textarea{width:100%;border:1px solid #252f3a;border-radius:10px;background:#0c1219;color:#eef2f6;padding:11px 12px;outline:none;font:inherit;font-size:10px}
+.project-brief textarea{resize:vertical;min-height:94px}
+.project-brief input:focus,.project-brief select:focus,.project-brief textarea:focus{border-color:#465363;box-shadow:0 0 0 3px rgba(255,255,255,.03)}
+.brief-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.brief-submit{width:100%;min-height:44px;border:0;border-radius:10px;background:#eef2f6;color:#0b1016;font-size:10px;font-weight:900;cursor:pointer}
+.project-brief small{display:block;margin-top:9px;color:#697582;font-size:8px;line-height:1.5}
+
+html[data-theme="light"] .proof-strip{background:#f7f8fa;border-bottom-color:#e1e5ea}
+html[data-theme="light"] .proof-grid{border-left-color:#e1e5ea}
+html[data-theme="light"] .proof-grid>div{border-right-color:#e1e5ea}
+html[data-theme="light"] .proof-grid strong{color:#202731}
+html[data-theme="light"] .proof-grid span{color:#74808d}
+html[data-theme="light"] #process{background:#f5f7f9;border-color:#e1e5ea}
+html[data-theme="light"] .process-card{border-color:#dfe4ea;background:#fff}
+html[data-theme="light"] .process-card>span{color:#9aa3ad}
+html[data-theme="light"] .process-card h3{color:#171c23}
+html[data-theme="light"] .process-card p{color:#687482}
+html[data-theme="light"] .project-brief{border-color:#dfe4ea;background:#f8f9fb}
+html[data-theme="light"] .project-brief label>span{color:#697583}
+html[data-theme="light"] .project-brief input,html[data-theme="light"] .project-brief select,html[data-theme="light"] .project-brief textarea{border-color:#d8dee6;background:#fff;color:#202731}
+html[data-theme="light"] .brief-submit{background:#171c23;color:#fff}
+
+@media(max-width:980px){
+  .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .process-card:last-child{grid-column:1/-1}
+}
+@media(max-width:760px){
+  .proof-grid{grid-template-columns:1fr 1fr}
+  .proof-grid>div{min-height:96px;padding:20px 16px}
+  .process-grid{grid-template-columns:1fr}
+  .process-card,.process-card:last-child{grid-column:auto;min-height:0}
+  .process-card>span{margin-bottom:22px}
+}
+@media(max-width:480px){
+  .proof-grid{grid-template-columns:1fr}
+  .proof-grid>div{min-height:82px}
+  .brief-row{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .site-intro{display:none!important}
+  body.intro-active{overflow:auto!important}
+}
