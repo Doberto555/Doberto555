@@ -300,3 +300,14 @@ html[data-theme="light"] .archive-card p{color:#687482}
 html[data-theme="light"] .archive-link{color:#37414d}
 @media(max-width:980px){.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.project-archive{margin-top:38px}.archive-head{align-items:flex-start;flex-direction:column;gap:8px}.archive-head>p{text-align:left}.archive-grid{grid-template-columns:1fr}.archive-card{min-height:0}}
+
+
+/* Two app archive layout */
+.archive-grid-two{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.archive-card-app{min-height:280px}
+.archive-type{margin:-12px 0 14px;color:#667381;font-size:7px;font-weight:900;letter-spacing:.12em}
+html[data-theme="light"] .archive-type{color:#89939e}
+@media(max-width:760px){
+  .archive-grid-two{grid-template-columns:1fr!important}
+  .archive-card-app{min-height:0}
+}
