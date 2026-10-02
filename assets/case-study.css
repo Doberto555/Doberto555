@@ -30,3 +30,17 @@ main>section:not(.hero){padding:84px 0 96px;background:linear-gradient(180deg,#0
 
 /* No decorative kicker bar */
 .kicker::before{display:none!important}.kicker{gap:0}
+
+
+/* Unified case study V2 */
+.identity-mark{font-size:18px;font-weight:900;letter-spacing:-.04em;color:var(--accent)}
+.case-context{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:28px}
+.case-context>div{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#0d1118}
+.case-context span{display:block;color:#687382;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
+.case-context strong{display:block;color:#dce2e9;font-size:10px;line-height:1.5}
+.topin>.case-pref:last-child{margin-left:auto}
+html[data-theme="light"] .identity-mark{background:#fff;color:var(--accent)}
+html[data-theme="light"] .case-context>div{border-color:#dfe4ea;background:#fff}
+html[data-theme="light"] .case-context span{color:#7a8490}
+html[data-theme="light"] .case-context strong{color:#2a313a}
+@media(max-width:760px){.case-context{grid-template-columns:1fr}.case-context>div{padding:14px 16px}}
