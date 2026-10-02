@@ -44,3 +44,33 @@ html[data-theme="light"] .case-context>div{border-color:#dfe4ea;background:#fff}
 html[data-theme="light"] .case-context span{color:#7a8490}
 html[data-theme="light"] .case-context strong{color:#2a313a}
 @media(max-width:760px){.case-context{grid-template-columns:1fr}.case-context>div{padding:14px 16px}}
+
+
+/* Case study project navigation */
+.case-project-nav{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:stretch;margin-top:46px;padding-top:30px;border-top:1px solid var(--line)}
+.case-project-link{position:relative;min-height:118px;padding:20px;border:1px solid var(--line);border-radius:18px;background:#0d1118;display:flex;flex-direction:column;justify-content:flex-end}
+.case-project-link strong{max-width:90%;color:#e9edf2;font-size:15px;letter-spacing:-.025em}
+.case-project-link small{position:absolute;top:18px;color:#5f6a77;font-size:18px}
+.case-project-prev small{left:20px}
+.case-project-next{text-align:right;align-items:flex-end}
+.case-project-next small{right:20px}
+.case-nav-eyebrow{margin-bottom:6px;color:#697482;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.11em}
+.case-project-all{display:grid;place-items:center;min-width:124px;padding:16px;border:1px solid var(--line);border-radius:18px;color:#8c97a4;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+@media(hover:hover){
+  .case-project-link:hover,.case-project-all:hover{border-color:#3a4451;background:#10161e;color:#fff}
+  .case-project-link:hover strong{color:#fff}
+}
+html[data-theme="light"] .case-project-link,
+html[data-theme="light"] .case-project-all{border-color:#dfe4ea;background:#fff}
+html[data-theme="light"] .case-project-link strong{color:#20262f}
+html[data-theme="light"] .case-nav-eyebrow,
+html[data-theme="light"] .case-project-all{color:#6d7885}
+@media(max-width:760px){
+  .case-project-nav{grid-template-columns:1fr 1fr;margin-top:34px}
+  .case-project-all{grid-column:1/-1;grid-row:2;min-height:54px}
+}
+@media(max-width:480px){
+  .case-project-nav{grid-template-columns:1fr}
+  .case-project-all{grid-column:auto;grid-row:auto}
+  .case-project-link{min-height:100px}
+}
