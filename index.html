@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="assets/portfolio.css?v=20260912-pro1">
 <link rel="stylesheet" href="assets/portfolio-polish.css?v=20260905-cinematic7">
 <link rel="stylesheet" href="assets/preferences.css?v=20260905-cinematic2">
-<link rel="stylesheet" href="assets/final-clean.css?v=20261001-footer1">
+<link rel="stylesheet" href="assets/final-clean.css?v=20261001-selected1">
 <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/235633378?v=4">
 <meta property="og:type" content="website"><meta property="og:site_name" content="DOBERTO MRLIT DEV">
 <meta property="og:title" content="DOBERTO MRLIT DEV | Full-Stack Developer"><meta property="og:description" content="Developer behind DOBERTO HOST, DOBERTO FF PROXY, DOBERTO MINI MD, DOBERTO FLIX, AYITI MARKET, DOBERTO MD V3, DOBERTO VCF and NOVATOP."><meta property="og:url" content="https://dobertomrlit.zone.id/"><meta property="og:image" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final"><meta property="og:image:secure_url" content="https://dobertomrlit.zone.id/assets/og-preview-v2.jpg?v=20260905-final"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="DOBERTO MRLIT DEV portfolio preview">
@@ -38,6 +38,27 @@
   <div><strong>Mobile-first</strong><span>Interfaces designed for real devices</span></div>
   <div><strong>Cloud & VPS</strong><span>APIs, databases and self-hosted systems</span></div>
   <div><strong>Ongoing improvement</strong><span>Testing, maintenance and iteration</span></div>
+</div></section>
+
+<section class="home-selected-work" id="selected-work"><div class="wrap">
+  <div class="section-head reveal">
+    <div><div class="kicker" data-i18n="selectedKicker">Selected work</div><div class="title" data-i18n="selectedTitle">A closer look at recent products.</div></div>
+    <div class="selected-head-side"><p class="desc" data-i18n="selectedDesc">Three products that show my work across streaming, marketplaces and utility platforms.</p><a href="projects.html" data-i18n="selectedAll">View all projects →</a></div>
+  </div>
+  <div class="home-selected-grid">
+    <a class="home-selected-card reveal" href="case-studies/doberto-flix.html">
+      <div class="home-selected-media"><img src="assets/doberto-flix.svg" alt="DOBERTO FLIX preview" loading="lazy" decoding="async"></div>
+      <div class="home-selected-copy"><span data-i18n="selectedProduct">Product case study</span><h3>DOBERTO FLIX</h3><p data-i18n="selectedFlix">Web + Android streaming product with mobile-first discovery and playback.</p><b data-i18n="selectedOpen">View case study →</b></div>
+    </a>
+    <a class="home-selected-card reveal" href="case-studies/ayiti-market.html">
+      <div class="home-selected-media"><img src="assets/ayiti-market.svg" alt="AYITI MARKET preview" loading="lazy" decoding="async"></div>
+      <div class="home-selected-copy"><span data-i18n="selectedProduct">Product case study</span><h3>AYITI MARKET</h3><p data-i18n="selectedMarket">Marketplace experience built around listings, discovery and mobile buying flows.</p><b data-i18n="selectedOpen">View case study →</b></div>
+    </a>
+    <a class="home-selected-card reveal" href="case-studies/doberto-vcf.html">
+      <div class="home-selected-media"><img src="assets/doberto-vcf.svg" alt="DOBERTO VCF preview" loading="lazy" decoding="async"></div>
+      <div class="home-selected-copy"><span data-i18n="selectedProduct">Product case study</span><h3>DOBERTO VCF</h3><p data-i18n="selectedVcf">Contact and WhatsApp utility focused on practical mobile workflows.</p><b data-i18n="selectedOpen">View case study →</b></div>
+    </a>
+  </div>
 </div></section>
 
 <section class="home-explore" id="explore"><div class="wrap">
@@ -87,4 +108,4 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 document.querySelectorAll('.product-mark img').forEach(img=>img.addEventListener('error',()=>{const parent=img.parentElement;parent.textContent=img.dataset.fallback||'';parent.style.fontWeight='900';parent.style.color='var(--accent)';parent.setAttribute('aria-label',img.alt)}));
 const items=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.08});items.forEach(i=>io.observe(i))}else items.forEach(i=>i.classList.add('show'));
 </script>
-<script src="assets/portfolio-ui.js?v=20261001-footer1"></script></body></html>
+<script src="assets/portfolio-ui.js?v=20261001-selected1"></script></body></html>
