@@ -558,3 +558,12 @@ html[data-theme="light"] .selected-head-side>a{color:#36404b}
   .home-selected-grid{grid-template-columns:1fr}
   .home-selected-card,.home-selected-card:last-child{grid-column:auto;min-height:0}
 }
+
+
+/* Direct WhatsApp contact */
+.social-whatsapp-direct{border-color:rgba(37,211,102,.24)!important;background:rgba(37,211,102,.04)!important}
+.social-whatsapp-direct>span:last-child{display:flex;flex-direction:column;line-height:1.15}
+.social-whatsapp-direct small{margin-top:4px;color:#77c99a;font-size:8px;font-weight:800;letter-spacing:.02em}
+@media(hover:hover){.social-whatsapp-direct:hover{border-color:rgba(37,211,102,.5)!important;background:rgba(37,211,102,.08)!important}}
+html[data-theme="light"] .social-whatsapp-direct{border-color:rgba(22,163,74,.2)!important;background:rgba(22,163,74,.035)!important}
+html[data-theme="light"] .social-whatsapp-direct small{color:#198754}
