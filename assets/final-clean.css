@@ -244,3 +244,30 @@ html[data-theme="light"] .featured-card img{
     min-height:0!important;
   }
 }
+
+
+/* Featured artwork reliability fix */
+.featured-card,
+.featured-card.featured-wide{
+  aspect-ratio:16/9!important;
+}
+.featured-card img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  display:block!important;
+  background:transparent!important;
+}
+@media(max-width:760px){
+  .featured-card,
+  .featured-card.featured-wide{
+    aspect-ratio:16/9!important;
+  }
+}
+@media(max-width:480px){
+  .featured-card,
+  .featured-card.featured-wide{
+    aspect-ratio:16/9!important;
+  }
+}
