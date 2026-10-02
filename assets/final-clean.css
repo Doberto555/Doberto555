@@ -382,3 +382,33 @@ html[data-theme="light"] .project-stream-head>p{color:#6f7b88}
   .project-stream-head{align-items:flex-start;flex-direction:column;gap:8px;margin-bottom:18px}
   .project-stream-head>p{text-align:left}
 }
+
+
+/* Dedicated page heroes */
+.page-hero{padding:64px 0 38px!important;background:#07090d;border-bottom:1px solid #151b23}
+.page-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:48px;align-items:end}
+.page-hero-copy{max-width:900px}
+.page-hero-kicker{color:#6f7a87;font-size:9px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+.page-hero-title{max-width:900px;margin:15px 0 18px;color:#f0f3f7;font-size:clamp(48px,6vw,86px);line-height:.95;letter-spacing:-.06em}
+.page-hero-desc{max-width:720px;margin:0;color:#929daa;font-size:14px;line-height:1.75}
+.page-hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.page-hero-actions .btn{min-width:160px}
+.page-hero-index{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;min-height:150px;border-left:1px solid #1d252f;padding-left:28px}
+.page-hero-index span{color:#2d3743;font-size:74px;font-weight:900;line-height:.82;letter-spacing:-.07em}
+.page-hero-index small{margin-top:12px;color:#6d7885;font-size:8px;font-weight:900;letter-spacing:.16em}
+.page-main>.page-hero:first-child{padding-top:72px!important}
+html[data-theme="light"] .page-hero{background:#f7f8fa;border-bottom-color:#e1e5ea}
+html[data-theme="light"] .page-hero-title{color:#151a22}
+html[data-theme="light"] .page-hero-desc{color:#66717f}
+html[data-theme="light"] .page-hero-index{border-left-color:#dfe4ea}
+html[data-theme="light"] .page-hero-index span{color:#d7dde4}
+html[data-theme="light"] .page-hero-index small{color:#7c8793}
+@media(max-width:760px){
+  .page-hero{padding:42px 0 28px!important}
+  .page-hero-grid{grid-template-columns:1fr;gap:24px}
+  .page-hero-title{font-size:clamp(40px,12vw,58px)}
+  .page-hero-desc{font-size:12px}
+  .page-hero-index{display:none}
+  .page-hero-actions{display:grid;grid-template-columns:1fr 1fr}
+}
+@media(max-width:430px){.page-hero-actions{grid-template-columns:1fr}}
